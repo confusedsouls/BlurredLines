@@ -8,32 +8,34 @@
 </div>
 
 
-<table class = 'table table-striped table-bordered' style = 'width:100%'>
-<thead>
+<table class = 'table table-striped table-bordered' style = 'width:1000px;'>
+<thead ng-init = "filter=false">
 <th>
-Name
-<input type = 'text' placeholder = 'Search' ng-model = 'term.name'>
+<div ng-hide = "filter">Name</div>
+<input type = 'text' placeholder = 'Name' ng-model = 'term.name' ng-show = "filter">
 </th>
 <th>
-Address
-<input type = 'text' placeholder = 'Search' ng-model = 'term.address'>
+<div ng-hide = "filter">Address</div>
+<input type = 'text' placeholder = 'Address' ng-model = 'term.address' ng-show = "filter">
 </th>
 <th>
-Mail
-<input type = 'text' placeholder = 'Search' ng-model = 'term.mail'>
+<div ng-hide = "filter">Mail</div>
+<input type = 'text' placeholder = 'Mail' ng-model = 'term.mail' ng-show = "filter">
 </th>
 <th>
-Phone
-<input type = 'text' placeholder = 'Search' ng-model = 'term.phone'>
+<div ng-hide = "filter">Phone</div>
+<input type = 'text' placeholder = 'Phone' ng-model = 'term.phone' ng-show = "filter">
 </th>
+<th ng-init = "add = false"><button type='button' class='btn btn-primary' ng-click = 'add = !add'>Add</button></th>
+<th><button type='button' class='btn btn-primary' ng-click = 'filter = !filter'>Filter</button></th>
 </thead>
-<tbody>
+<tr ng-show = "add">
 <td><input type = "text" ng-model = "person.name"></td>
 <td><input type = "text" ng-model = "person.address"></td>
 <td><input type = "text" ng-model = "person.mail"></td>
 <td><input type = "text" ng-model = "person.phone"></td>
-<td><button type='button' class='btn btn-primary' ng-click = 'addPerson()'>Add</button></td>
-</tbody>
+
+</tr>
 <tbody>
   <tr ng-init = 'editing = false' ng-repeat = 'p in data | filter:term'>
     <td>
@@ -57,7 +59,6 @@ Phone
 </tr>
 </tbody>
 </table>
-<div>{{p | json}}</div>
 <div class='footer'>
   <p>♥ from the Jalan team</p>
 </div>
