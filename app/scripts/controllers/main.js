@@ -609,4 +609,24 @@ angular.module('vizApp')
   })
   .controller('MainCtrl', function ($scope,Data) {
     $scope.data = Data.getData();
+
+    $scope.deletePerson = function(index) {
+    	console.log(index);
+    	$scope.data.splice(index,1);
+}
+    $scope.addPerson = function() {
+    	// console.log(person);
+    	// console.log($scope.data[$scope.data.length-1]);
+    	$scope.data.push($scope.person);
+    	// console.log($scope.data.length);
+    	// person = {};
+    	$scope.person = {};
+    }
+
+    $scope.updatePerson = function(index) {
+    	console.log($scope.person);
+    	$scope.data[index] = $scope.person;
+    	$scope.person = {};
+    }
+    
   });
