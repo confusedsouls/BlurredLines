@@ -12,6 +12,10 @@ angular.module('vizApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/upload',{
+        templateUrl:'views/partial.html',
+        controller:'UploadCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

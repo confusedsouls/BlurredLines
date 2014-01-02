@@ -1,0 +1,13 @@
+<div class = "header">
+<form role = "form" method = "post" enctype = "multipart/form-data">
+<div class="form-group">
+    <label for="myfile">File input</label>
+    <input type="file" ng-model = "file" name = "myfile" id="myfile">
+</div>
+<button class = "btn btn-default" ng-click = "post(file)">Upload</button>
+</form>
+
+<div class = "form-group">
+<input ng-model = "movie" /><button ng-click = "post(movie)">click it</button>
+</div>
+</div>
